@@ -722,6 +722,14 @@
                 document.getElementById('nav-contact-link').classList.remove('hidden'); // Show contact link when signed out
             });
         }
+        function checkSignInForDownload() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            if (auth2.isSignedIn.get()) {
+                window.open('https://drive.google.com/uc?export=download&id=1VnZjROLo_sD0xonmSbX1OjSdfVGdnNJ6', '_blank');
+            } else {
+                alert('Please sign in with Google to download the resume.');
+            }
+        }
     </script>
 </body>
 </html>
